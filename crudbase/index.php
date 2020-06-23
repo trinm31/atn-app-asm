@@ -119,12 +119,7 @@ if(isset($_GET['delete_id'])){
         <?php require_once 'includes/footer.php'; ?>
 
 
-        <?php 
-        $app->get('/cowsay', function() use($app) {
-        $app['monolog']->addDebug('cowsay');
-        return "<pre>".\Cowsayphp\Cow::say("Cool beans")."</pre>";
-        });?>
-
+       
         <!-- Custom scripts -->
         <script>
             // JQuery confirmation
