@@ -1,5 +1,9 @@
 <?php
 require('../vendor/autoload.php');
+$app->get('/cowsay', function() use($app) {
+  $app['monolog']->addDebug('cowsay');
+  return "<pre>".\Cowsayphp\Cow::say("Cool beans")."</pre>";
+  });
 // Show PHP errors
 ini_set('display_errors',1);
 ini_set('display_startup_erros',1);
@@ -119,7 +123,12 @@ if(isset($_GET['delete_id'])){
         <?php require_once 'includes/footer.php'; ?>
 
 
-       
+        <?php 
+        $app->get('/cowsay', function() use($app) {
+        $app['monolog']->addDebug('cowsay');
+        return "<pre>".\Cowsayphp\Cow::say("Cool beans")."</pre>";
+        });
+        ?>
 
         <!-- Custom scripts -->
         <script>
