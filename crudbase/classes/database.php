@@ -12,7 +12,7 @@ class Database {
     public function dbConnection() {
         $this->conn = null;
         try {
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->dbName, $this->username, $this->password, array(
+            $this->conn = new PDO("pgsql:host=" . $this->host . ";dbname=" . $this->dbName, $this->username, $this->password, array(
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
             ));
